@@ -4,14 +4,8 @@ const orderlist_view = fs.readFileSync('./orderlist.html', 'utf-8');
 const tennisMarket_view = fs.readFileSync('./tennisMarket.html', 'utf-8');
 const projectLogList_view = fs.readFileSync('./projectLogList.html', 'utf-8');
 
-const mariadb = require('./database/connect/mariadb');
-
 function main(response) {
     console.log('main');
-
-    mariadb.query('SELECT * FROM product;', function (err, rows) {
-        console.log(rows);
-    });
 
     response.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
     response.write(main_view);
