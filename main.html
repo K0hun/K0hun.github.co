@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title> Main </title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        #txt_welcome {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            text-align: center;
+        }
+
+        .card_title {
+            font-size: 20px;
+        }
+
+        .card_button {
+            font-size: 25px;
+            width: 150px;
+            height: 30px;
+        }
+
+        .card_img {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>김영훈의 포트폴리오</h1>
+    <div id="txt_welcome">
+        <h3>
+            안녕하세요 <br>
+            개발자를 꿈꾸는 김영훈입니다.<br>
+            제 프로젝트를 소개합니다.</h3>
+        <br>
+        <br>
+    </div>
+    <div style="display:grid; grid-template-columns: 1fr 1fr 1fr;">
+        <div class="card">
+            <img class="card_img" src="./img/tennisMarket.jpg">
+            <p class="card_title"> 테니스 마켓 </p>
+            <input class="card_button" type="button" value="order" onclick="location.href='/tennisMarket'">
+        </div>
+        <div class="card">
+            <img class="card_img" src="./img/blueRacket.png">
+            <p class="card_title"> Blue Racket </p>
+            <input class="card_button" type="button" value="order" onclick="location.href='/order?productId=2'">
+        </div>
+        <div class="card">
+            <img class="card_img" src="./img/blackRacket.png">
+            <p class="card_title"> Black Racket </p>
+            <input class="card_button" type="button" value="order" onclick="location.href='/order?productId=3'">
+        </div>
+    </div>
+</body>
+
+</html>
