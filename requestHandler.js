@@ -56,35 +56,16 @@ function blackRacket(response) {
     })
 }
 
-function order(response, productId) {
+function order(response){
     response.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-
-    mariadb.query("INSERT INTO orderlist VALUES (" + productId + ", '" + new Date().toLocaleDateString() + "');", function (err, rows) {
-        console.log(rows);
-    });
-
     response.write('order page');
     response.end();
 }
 
-function orderlist(response) {
-    console.log('orderlist');
-
-    response.writeHead(200, { 'Content-Type': 'text/html' });
-
-    mariadb.query("SELECT * FROM orderlist;", function (err, rows) {
-        response.write(orderlist_view);;
-
-        rows.forEach(element => {
-            response.write("<tr>"
-                + "<td>" + element.product_id + "</td>"
-                + "<td>" + element.order_date + "</td>"
-                + "</tr>");
-        });
-
-        response.write("</table>")
-        response.end();
-    })
+function orderlist(response){
+    response.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+    response.write(orderlist_view);
+    response.end();
 }
 
 function projectLoglist(response){
